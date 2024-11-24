@@ -81,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function(){
             e.target.closest(".cart-product").remove()
 
             saveitems()
+            renderCart()
 
         }
     })
