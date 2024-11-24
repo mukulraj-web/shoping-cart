@@ -68,12 +68,19 @@ document.addEventListener("DOMContentLoaded", function(){
     cartItems.addEventListener("click",(e)=>{
         if(e.target.tagName === "BUTTON"){
           let dataId = e.target.getAttribute("data-id")
-    //       console.log(dataId)
-          
-    //    cart.pop(dataId)
-    //    console.log(cart)
+   
+            // Remove the item from the cart array
+            const index = cart.findIndex(item => item.id === parseInt(dataId));
+            if (index !== -1) {
+                cart.splice(index, 1); // Remove the item from the cart array
+              
+            }
 
+            // Remove the item from the DOM
+            // e.target.closest(".cart-product").remove();
+            e.target.closest(".cart-product").remove()
 
+            saveitems()
 
         }
     })
